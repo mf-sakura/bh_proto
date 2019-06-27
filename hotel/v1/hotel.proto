@@ -16,36 +16,36 @@ message GetHotelsMessage {}
 message GetHotelsResponse { repeated Hotel hotels = 1; }
 
 message Hotel {
-  int32 id = 1;
+  int64 id = 1;
   string hotel_name = 2;
 }
 
-message GetPlansMessage { int32 hotel_id = 1; }
+message GetPlansMessage { int64 hotel_id = 1; }
 
 message GetPlansResponse { repeated Plan plans = 1; }
 
 message Plan {
-  int32 id = 1;
-  int32 hotel_id = 2;
+  int64 id = 1;
+  int64 hotel_id = 2;
   string description = 3;
   google.protobuf.Timestamp date = 4;
-  uint32 total = 5;
-  uint32 available = 6;
-  uint32 cost = 7;
+  uint64 total = 5;
+  uint64 available = 6;
+  uint64 cost = 7;
 }
 
 message ReserveHotellMessage {
-  int32 user_id = 1;
-  int32 plan_id = 2;
-  int32 sequence_id = 3;
+  int64 user_id = 1;
+  int64 plan_id = 2;
+  int64 sequence_id = 3;
 }
 
 message ReserveHotelResponse {
-  int32 reservation_id = 1;
+  int64 reservation_id = 1;
 }
 
 message CancelHotelMessage {
-  int32 reservation_id = 1;
+  int64 reservation_id = 1;
 }
 
 message CancelHotelResponse {
@@ -53,7 +53,7 @@ message CancelHotelResponse {
 }
 
 message GetReservationsMessage {
-  int32 user_id=1;
+  int64 user_id=1;
 }
 
 message GetReservationsResponse {
@@ -61,8 +61,8 @@ message GetReservationsResponse {
 }
 
 message Reservation {
-  int32 id = 1;
-  int32 plan_id = 2;
-  int32 user_id = 3;
+  int64 id = 1;
+  int64 plan_id = 2;
+  int64 user_id = 3;
   string sequence_id = 4;
 }
