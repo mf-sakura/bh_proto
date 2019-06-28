@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+
+service UserService {
+    rpc RegistUser(RegistUserMessage) returns (RegistUserResponse) {}
+    rpc GetUser(GetUserMessage) returns (GetUserResponse) {}
+    rpc IncrUserCounter(IncrUserCounterMessage) returns (IncrUserCounterResponse) {}
+    rpc DecrUserCounter(DecrUserCounterMessage) returns (DecrUserCounterResponse) {}
+}
+
+message User {
+    int64 id = 1;
+    string name = 2;
+}
+message RegistUserMessage {
+    string name =1;
+}
+message RegistUserResponse{
+    int64 id = 1;
+}
+
+message GetUserMessage{
+    int64 user_id = 1;
+}
+
+message GetUserResponse{
+    User user = 1;
+}
+message IncrUserCounterMessage {
+    int64 user_id = 1;
+}
+message IncrUserCounterResponse {
+
+}
+message DecrUserCounterMessage {
+    int64 user_id = 1;
+}
+message DecrUserCounterResponse {
+}
