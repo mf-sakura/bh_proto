@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+
+service BookHotelService {
+    rpc BookHotel(BookHotelMessage) returns (BookHotelResponse) {}
+}
+
+message BookHotelMessage {
+    int64 user_id = 1;
+    string sequence_id = 2;
+    int64 plan_id = 3;
+}
+message BookHotelResponse {
+    int64 reservtion_id=1;
+}
